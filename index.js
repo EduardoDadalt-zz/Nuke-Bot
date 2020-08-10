@@ -1,9 +1,9 @@
 const discord = require("discord.js");
 const client = new discord.Client();
 
-const token = "NzMzOTI1ODQzOTAxODc0MTc2.XxKPtA.9VEUnuUysahoa0KNeXWkmAL8ais";
+const token = "";
 
-const Botid = "733925843901874176";
+const Botid = "";
 
 const Comando = "!nuke";
 console.log("Token: " + token);
