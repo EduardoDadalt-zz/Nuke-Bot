@@ -12,7 +12,7 @@ client.on("ready", () => {
 });
 client.on("message", (msg) => {
   if (msg.guild) {
-    if (msg.content.startsWith(Comando)) {
+    if (msg.content.startsWith(command)) {
       msg.guild.members.cache.array().forEach((f) => {
         if (f.user.id != Botid && f.bannable) {
           try {            
